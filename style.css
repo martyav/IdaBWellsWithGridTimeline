@@ -11,13 +11,42 @@ body {
 }
 
 header {
-    display: block;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 44px;
     font-family: 'Copse', sans-serif;
-    font-size: 1.4em;
+    box-shadow: 0 3px 10px black;
+}
+
+header * {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: inline;
+    align-items: baseline;
+    margin-left: 8px;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header li {
+    align-content: stretch;
 }
 
 header a:link {
     color: var(--boundary-text-color);
+    text-decoration: none;
+}
+
+header li a:hover {
+    color: white;
 }
 
 header a:visited {
@@ -40,11 +69,17 @@ h1, h2 {
     letter-spacing: 0.16em;
 }
 
+h1 {
+    margin-top: 50px;
+    margin-left: 10%;
+}
+
 h2 {
     color: var(--accent-color);
 }
 
 main {
+    display: block;
     max-width: 95%;
     margin-left: auto;
     margin-right: auto;
@@ -81,17 +116,18 @@ main p {
     overflow-wrap: break-word;
 }
 
-main .bio p:first-of-type:first-line {
+main #bio p:first-of-type:first-line {
     font-size: 1.1em;
     font-weight: bold;
     text-indent: none;
 }
 
-main .bio p:last-child::after {
+main #bio p:last-child::after {
     content: "\002767";
+    color: var(--accent-color)
 }
 
-.bio {
+#bio {
     max-width: 60%;
     background-color: var(--secondary-bg-color);
     margin-left: auto;
@@ -100,20 +136,21 @@ main .bio p:last-child::after {
     padding-right: 64px;
     padding-bottom: 16px;
     padding-top: 8px;
+    box-shadow: -2px 2px 10px gray;
 }
 
-.timeline {
+#timeline {
     display: grid;
     grid-template-areas: "date description";
     grid-template-columns: 1fr 15fr;
 }
 
-.timeline ol {
+#timeline ol {
     list-style: none;
     padding-left: 0;
 }
 
-.timeline li {
+#timeline li {
     padding-bottom: 8px;
 }
 
